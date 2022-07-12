@@ -1,0 +1,123 @@
+#include "xgpio.h"
+#include "xscugic.h"
+#include "xparameters.h"
+#include "xil_exception.h"
+
+#include <stdio.h>
+
+#include "headers/BLOCK.h"
+#include "headers/LEVEL0_DEFINES.h"
+#include "headers/MEM_CONSTANTS.h"
+#include "headers/USER.h"
+
+void initializeInterrupts();
+void inputChanged(void *callback_ref);
+
+USER_DAT user; // Global variable for user data. Modified by main.
+
+int main()
+{
+
+	// TODO: Generate overall user data
+	// Initialize the player
+	USER_DAT user = (USER_DAT){
+		.imageData = USER_ADDR, // Because imageData is an address, simply make it equalt to the USER_ADDR
+		.user_pos_x_prev = 112,
+		.user_pos_y_prev = 56,
+		.user_pos_x = 112,
+		.user_pos_y = 56,
+		.user_score = 0,
+		.user_timer = 0,
+		.bombsDrop = 0,
+		.currentLevel = 0; // initialize the current level.
+	};
+
+
+
+	while(1)
+	{
+
+	}
+	return 0;
+}
+
+void initializeInterrupts()
+{
+	// TODO: Generate interrupt data
+
+	int status = 0;
+	XGpio btn_sw;
+	XScuGic intc;
+	XScuGic_Config *cfg;
+
+	XGpio_Initialize(&btn_sw, XPAR_AXI_GPIO_0_DEVICE_ID);
+
+	XGpio_SetDataDirection(&btn_sw, GPIO_BTN_CHANNEL, 0xFF);
+
+	cfg = XScuGic_LookupConfig(XPAR_SCUGIC_0_DEVICE_ID);
+
+	status = XScuGic_CfgInitialize(&intc, cfg, cfg->CpuBaseAddress);
+
+	status = XScuGic_SelfTest(&intc);
+
+	Xil_ExceptionInit();
+	Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT, (Xil_ExceptionHandler)XScuGic_InterruptHandler, &intc);
+	Xil_ExceptionEnable();
+
+	status = XScuGic_Connect(&intc, XPAR_FABRIC_GPIO_0_VEC_ID, (Xil_ExceptionHandler)input_changed, (void *)&btn_sw);
+
+	XScuGic_SetPriorityTriggerType(&intc, XPAR_FABRIC_GPIO_0_VEC_ID, GIC_PRIO(10), 0x03);
+
+	XScuGic_Enable(&intc, XPAR_FABRIC_GPIO_0_VEC_ID);
+
+	// Enable the interrupt on the GPIO device
+	XGpio_InterruptEnable(&btn_sw, XGPIO_IR_MASK);
+	XGpio_InterruptGlobalEnable(&btn_sw);
+}
+
+/*
+ *
+ * This function will handle the movement of the user along with the placement of the bombs and their current status.
+ * Because this is an interrupt, the routine of execution will be very small and will not include any heavy calculations.
+ *
+ * */
+void input_changed(void* callback_ref)
+{
+	static uint8_t key;
+
+	key = XGpio_DiscreteRead(callback_ref, GPIO_BTN_CHANNEL);
+
+	user->user_pos_x_prev = user->user_pos_x;
+	user->user_pos_y_prev = user->user_pos_y;
+
+		if (key == 0x08)
+		{
+			user->user_pos_x += USER_MOVEMENT_L0;
+		}
+		else if (key == KB_KEY_LEFT)
+		{
+			user->user_pos_x -= USER_MOVEMENT_L0;
+		}
+		else if (key == KB_KEY_DOWN)
+		{
+			user->user_pos_y += USER_MOVEMENT_L0;
+		}
+		else if (key == KB_KEY_UP)
+		{
+			user->user_pos_y -= USER_MOVEMENT_L0;
+		}
+		else if (key == KB_KEY_A) // place da bomb
+		{
+			// Initiliaze bomb countdown
+			if (user->cooldown != 1)
+			{
+				user->cooldown = 1;
+				user->bombs[user->bombsDrop].blocktimer = bombTime; // Attach the bomb timer
+				user->bombs[user->bombsDrop].timerIsInitialized = true;
+				user->bombs[user->bombsDrop].x_position = user->user_pos_x;
+				user->bombs[user->bombsDrop].y_position = user->user_pos_y;
+				user->bombsDrop++;
+			}
+
+		}
+}

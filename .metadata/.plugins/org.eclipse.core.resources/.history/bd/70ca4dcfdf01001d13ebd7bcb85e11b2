@@ -1,0 +1,9 @@
+#ifndef MEM_CONSTANTS_H
+#define MEM_CONSTANTS_H
+
+#define FRAMEBUFFER_BASE_ADDR (0x00200000)
+#define LEVEL0_BACKGROUND_ADDR (0x00440900)
+#define
+
+
+#endif

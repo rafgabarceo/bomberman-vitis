@@ -1,0 +1,41 @@
+timestamp=[2022-07-12 20:27:31], mode=WORKBENCH_START, duration=0:00:05.328, duration_ms=5328, data={}
+timestamp=[2022-07-12 20:27:32], mode=WORKBENCH_UI_INIT, duration=0:00:00.751, duration_ms=751, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2022-07-12 20:27:36], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:03.621, duration_ms=3621, data={}
+timestamp=[2022-07-12 20:30:18], mode=APP_CREATION, duration=0:00:29.693, duration_ms=29693, data={name=cogproject, project_type=sdk, os=standalone, processor=ps7_cortexa9, runtime=cpp, platform=finalproject2_wrapper, application_type=application}
+timestamp=[2022-07-12 20:57:03], mode=PLATFORM_GENERATION, duration=0:00:17.633, duration_ms=17633, data={name=finalproject2_wrapper}
+timestamp=[2022-07-12 20:57:05], mode=BUILD, duration=0:00:01.445, duration_ms=1445, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:18:50], mode=BUILD, duration=0:00:00.510, duration_ms=510, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:19:18], mode=BUILD, duration=0:00:00.497, duration_ms=497, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:19:46], mode=BUILD, duration=0:00:00.505, duration_ms=505, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:20:25], mode=BUILD, duration=0:00:00.497, duration_ms=497, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:20:42], mode=BUILD, duration=0:00:00.491, duration_ms=491, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:26:10], mode=BUILD, duration=0:00:00.497, duration_ms=497, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:26:33], mode=BUILD, duration=0:00:00.489, duration_ms=489, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:27:11], mode=BUILD, duration=0:00:00.508, duration_ms=508, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:29:04], mode=BUILD, duration=0:00:00.496, duration_ms=496, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:29:26], mode=BUILD, duration=0:00:00.498, duration_ms=498, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:29:55], mode=BUILD, duration=0:00:00.738, duration_ms=738, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:30:32], mode=BUILD, duration=0:00:00.499, duration_ms=499, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:31:23], mode=BUILD, duration=0:00:00.752, duration_ms=752, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:35:42], mode=BUILD, duration=0:00:00.506, duration_ms=506, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:36:53], mode=BUILD, duration=0:00:00.486, duration_ms=486, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:38:12], mode=BUILD, duration=0:00:00.514, duration_ms=514, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:38:29], mode=BUILD, duration=0:00:00.498, duration_ms=498, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:39:31], mode=BUILD, duration=0:00:00.746, duration_ms=746, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:39:37], mode=BUILD, duration=0:00:00.760, duration_ms=760, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:40:08], mode=BUILD, duration=0:00:00.514, duration_ms=514, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:40:29], mode=BUILD, duration=0:00:00.492, duration_ms=492, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:40:46], mode=BUILD, duration=0:00:00.816, duration_ms=816, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:46:19], mode=PLATFORM_GENERATION, duration=0:00:06.676, duration_ms=6676, data={name=finalproject2_wrapper}
+timestamp=[2022-07-12 22:46:19], mode=BUILD, duration=0:00:00.176, duration_ms=176, data={name=cogproject, configuration=Debug, clean_build=true}
+timestamp=[2022-07-12 22:46:44], mode=PLATFORM_GENERATION, duration=0:00:15.208, duration_ms=15208, data={name=finalproject2_wrapper}
+timestamp=[2022-07-12 22:46:44], mode=BUILD, duration=0:00:00.182, duration_ms=182, data={name=cogproject, configuration=Debug, clean_build=true}
+timestamp=[2022-07-12 22:46:45], mode=BUILD, duration=0:00:01.108, duration_ms=1108, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:47:33], mode=BUILD, duration=0:00:00.512, duration_ms=512, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:47:45], mode=BUILD, duration=0:00:00.585, duration_ms=585, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:47:49], mode=BUILD, duration=0:00:00.748, duration_ms=748, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:48:06], mode=BUILD, duration=0:00:00.562, duration_ms=562, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:51:48], mode=BUILD, duration=0:00:00.986, duration_ms=986, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:52:12], mode=BUILD, duration=0:00:00.996, duration_ms=996, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:52:51], mode=BUILD, duration=0:00:00.564, duration_ms=564, data={name=cogproject, configuration=Debug, clean_build=false}
+timestamp=[2022-07-12 22:53:20], mode=BUILD, duration=0:00:01.164, duration_ms=1164, data={name=cogproject, configuration=Debug, clean_build=false}

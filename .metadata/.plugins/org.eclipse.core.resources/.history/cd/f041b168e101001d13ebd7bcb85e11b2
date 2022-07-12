@@ -1,0 +1,12 @@
+#include "xgpio.h"
+#include "xsugic.h"
+#include "xparameters.h"
+#include "xil_exception.h"
+
+#include <stdio.h>
+
+
+int main()
+{
+	return 0;
+}

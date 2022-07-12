@@ -1,0 +1,53 @@
+Nothing to build in platform 'finalproject2_wrapper'
+
+22:53:18 **** Incremental Build of configuration Debug for project cogproject ****
+make all 
+C:/Xilinx/Vitis/2020.2/gnuwin/bin/make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+C:/Xilinx/Vitis/2020.2/gnuwin/bin/make --no-print-directory main-build
+'Building file: ../src/c_files/level0.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/c_files/level0.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/arceo/Documents/vitis_projects_2020/finalproject2_wrapper/export/finalproject2_wrapper/sw/finalproject2_wrapper/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/c_files/level0.d" -MT"src/c_files/level0.o" -o "src/c_files/level0.o" "../src/c_files/level0.c"
+../src/c_files/level0.c: In function 'level0_init':
+../src/c_files/level0.c:182:4: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  182 |    printf("Out of bombs. Exiting.");
+      |    ^~~~~~
+../src/c_files/level0.c:182:4: warning: incompatible implicit declaration of built-in function 'printf'
+../src/c_files/level0.c:4:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+    3 | #include "../headers/MEM_CONSTANTS.h"
+  +++ |+#include <stdio.h>
+    4 | 
+../src/c_files/level0.c:51:13: warning: unused variable 'cratesY' [-Wunused-variable]
+   51 |  static int cratesY[44];
+      |             ^~~~~~~
+../src/c_files/level0.c:50:13: warning: unused variable 'cratesX' [-Wunused-variable]
+   50 |  static int cratesX[44];
+      |             ^~~~~~~
+At top level:
+../src/c_files/level0.c:50:13: warning: 'cratesX' defined but not used [-Wunused-variable]
+../src/c_files/level0.c:51:13: warning: 'cratesY' defined but not used [-Wunused-variable]
+   51 |  static int cratesY[44];
+      |             ^~~~~~~
+'Finished building: ../src/c_files/level0.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/arceo/Documents/vitis_projects_2020/finalproject2_wrapper/export/finalproject2_wrapper/sw/finalproject2_wrapper/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'initializeInterrupts':
+../src/main.c:67:6: warning: variable 'status' set but not used [-Wunused-but-set-variable]
+   67 |  int status = 0;
+      |      ^~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: cogproject.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Users/arceo/Documents/vitis_projects_2020/finalproject2_wrapper/export/finalproject2_wrapper/sw/finalproject2_wrapper/standalone_ps7_cortexa9_0/bsplib/lib -o "cogproject.elf"  ./src/c_files/level0.o  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: cogproject.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size cogproject.elf  |tee "cogproject.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  66140	   3596	   8672	  78408	  13248	cogproject.elf
+'Finished building: cogproject.elf.size'
+' '

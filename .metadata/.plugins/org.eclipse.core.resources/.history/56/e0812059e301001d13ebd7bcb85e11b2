@@ -1,0 +1,56 @@
+#include "xgpio.h"
+#include "xscugic.h"
+#include "xparameters.h"
+#include "xil_exception.h"
+
+#include <stdio.h>
+
+#include "headers/BLOCK.h"
+#include "headers/LEVEL0_DEFINES.h"
+#include "headers/MEM_CONSTANTS.h"
+#include "headers/USER.h"
+
+void initializeInterrupts();
+
+int main()
+{
+	// TODO: Generate overall user data
+	// Initialize the player
+	USER_DAT user = (USER_DAT){
+		.imageData = USER_ADDR, // Because imageData is an address, simply make it equalt to the USER_ADDR
+		.user_pos_x_prev = 112,
+		.user_pos_y_prev = 56,
+		.user_pos_x = 112,
+		.user_pos_y = 56,
+		.user_score = 0,
+		.user_timer = 0,
+		.bombsDrop = 0
+	};
+
+
+
+	while(1)
+	{
+
+	}
+	return 0;
+}
+
+void initializeInterrupts()
+{
+	// TODO: Generate interrupt data
+	int status = 0;
+	XGpio btn_sw;
+	XScuGic intc;
+	XScuGic_Config *cfg;
+
+	XGpio_Initialize(&btn_sw, XPAR_AXI_GPIO_0_DEVICE_ID);
+
+	XGpio_SetDataDirection(&btn_sw, GPIO_BTN_CHANNEL, 0xFF);
+
+	cfg = XScuGic_LookupConfig(XPAR_SCUGIC_0_DEVICE_ID);
+
+	status = XScuGic_CfgInitialize(&intc, cfg, cfg->CpuBaseAddress);
+
+	status = XScuGic_SelfTest(&intc);
+}
